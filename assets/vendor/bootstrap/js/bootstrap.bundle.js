@@ -1,8 +1,4 @@
-/*!
-  * Bootstrap v4.5.0 (https://getbootstrap.com/)
-  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
@@ -82,21 +78,11 @@
     subClass.__proto__ = superClass;
   }
 
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
+ 
 
   var TRANSITION_END = 'transitionend';
   var MAX_UID = 1000000;
-  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+  var MILLISECONDS_MULTIPLIER = 1000; 
 
   function toType(obj) {
     if (obj === null || typeof obj === 'undefined') {
@@ -139,11 +125,7 @@
     $.fn.emulateTransitionEnd = transitionEndEmulator;
     $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
   }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
+  
 
 
   var Util = {
@@ -173,8 +155,7 @@
     getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
       if (!element) {
         return 0;
-      } // Get transition-duration of the element
-
+      } 
 
       var transitionDuration = $(element).css('transition-duration');
       var transitionDelay = $(element).css('transition-delay');
@@ -183,8 +164,7 @@
 
       if (!floatTransitionDuration && !floatTransitionDelay) {
         return 0;
-      } // If multiple durations are defined, take the first
-
+      }
 
       transitionDuration = transitionDuration.split(',')[0];
       transitionDelay = transitionDelay.split(',')[0];
@@ -196,7 +176,7 @@
     triggerTransitionEnd: function triggerTransitionEnd(element) {
       $(element).trigger(TRANSITION_END);
     },
-    // TODO: Remove in v5
+   
     supportsTransitionEnd: function supportsTransitionEnd() {
       return Boolean(TRANSITION_END);
     },
@@ -219,7 +199,7 @@
     findShadowRoot: function findShadowRoot(element) {
       if (!document.documentElement.attachShadow) {
         return null;
-      } // Can find the shadow root otherwise it'll return the document
+      } 
 
 
       if (typeof element.getRootNode === 'function') {
@@ -229,7 +209,7 @@
 
       if (element instanceof ShadowRoot) {
         return element;
-      } // when we don't find a shadow root
+      } 
 
 
       if (!element.parentNode) {
@@ -258,12 +238,7 @@
   Util.jQueryDetection();
   setTransitionEndSupport();
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
+  
   var NAME = 'alert';
   var VERSION = '4.5.0';
   var DATA_KEY = 'bs.alert';
@@ -277,21 +252,17 @@
   var CLASS_NAME_ALERT = 'alert';
   var CLASS_NAME_FADE = 'fade';
   var CLASS_NAME_SHOW = 'show';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+ 
 
   var Alert = /*#__PURE__*/function () {
     function Alert(element) {
       this._element = element;
-    } // Getters
+    } 
 
 
     var _proto = Alert.prototype;
 
-    // Public
+   
     _proto.close = function close(element) {
       var rootElement = this._element;
 
@@ -311,7 +282,7 @@
     _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
-    } // Private
+    } 
     ;
 
     _proto._getRootElement = function _getRootElement(element) {
@@ -1650,13 +1621,7 @@
     return property ? css[property] : css;
   }
 
-  /**
-   * Returns the parentNode or the host of the element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} parent
-   */
+  
   function getParentNode(element) {
     if (element.nodeName === 'HTML') {
       return element;
@@ -1664,13 +1629,7 @@
     return element.parentNode || element.host;
   }
 
-  /**
-   * Returns the scrolling parent of the given element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} scroll parent
-   */
+  
   function getScrollParent(element) {
     // Return body, `getScroll` will take care to get the correct `scrollTop` from it
     if (!element) {
@@ -1857,15 +1816,7 @@
     return element[upperSide];
   }
 
-  /*
-   * Sum or subtract the element scroll values (left and top) from a given rect object
-   * @method
-   * @memberof Popper.Utils
-   * @param {Object} rect - Rect object you want to change
-   * @param {HTMLElement} element - The element from the function reads the scroll values
-   * @param {Boolean} subtract - set to true if you want to subtract the scroll values
-   * @return {Object} rect - The modifier rect object
-   */
+ 
   function includeScroll(rect, element) {
     var subtract = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
@@ -1879,15 +1830,7 @@
     return rect;
   }
 
-  /*
-   * Helper to detect borders of a given element
-   * @method
-   * @memberof Popper.Utils
-   * @param {CSSStyleDeclaration} styles
-   * Result of `getStyleComputedProperty` on the given element
-   * @param {String} axis - `x` or `y`
-   * @return {number} borders - The borders size of the given axis
-   */
+  
 
   function getBordersSize(styles, axis) {
     var sideA = axis === 'x' ? 'Left' : 'Top';
@@ -7030,4 +6973,3 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=bootstrap.bundle.js.map
